@@ -2,6 +2,9 @@
 
 #include "DataStore.h"
 
+/*
+ * A simple test class.
+ */
 class TestProcedure {
   public:
     TestProcedure()
@@ -12,13 +15,18 @@ class TestProcedure {
     void
     invoke(void)
     {
+        // Callback to the "DataStore".
         printNumber(number);
     }
 
     int number;
 };
 
-extern "C" void procedure_invoke(void)
+/*
+ * The "stored" procedure to be invoked by the "DataStore".
+ */
+extern "C" void
+procedure_invoke(void)
 {
     fprintf(stdout, "========== Entered Tenant ==========\n");
 
